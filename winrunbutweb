@@ -1,0 +1,25 @@
+from tkinter import *
+from tkinter import messagebox
+from webbrowser import open as oped
+
+class Mylogin:
+    def __init__(self,t):
+        self.myl1=Label(t,text="https://")
+        self.myl1.grid(row=0,column=0)
+
+        self.mye1=Entry(t, width=15, selectborderwidth=3)
+        self.mye1.grid(row=0,column=1,padx=10)
+
+        def mydis():
+            messagebox.showwarning(" ",("you are going to open\nhttps://"+self.mye1.get()))
+            oped("https://"+ self.mye1.get())
+        self.mbtn=Button(t,text="Open Website",command=mydis,font=("Courier New",12),relief="groove",bd=7)
+        self.mbtn.grid(row=2,columnspan=3)
+
+
+t=Tk()
+mo=Mylogin(t)
+t.title("open web")
+t.geometry("240x160")
+t.resizable(width=False,height=False)
+t.mainloop()
